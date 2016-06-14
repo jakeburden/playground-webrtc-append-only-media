@@ -1,3 +1,20 @@
+## playground webrtc append only media
+
+### Goal: Have users be able to send *any* kind of media over webrtc and read it over a Twitter-like stream.
+
+#### WIP: So far this sends text to peers over webrtc using hyperlog, webrtc-swarm, and signalhub, with a frontend built in yo-yo.
+
+##### quick start
+
+modify the signalhubs in `browser/index.js` to match your hubs.
+
+`npm run dev`
+
+for production use `npm run production`
+
+browser/indexjs:
+
+```js
 const level = require('level')
 const hyperlog = require('hyperlog')
 const yo = require('yo-yo')
@@ -57,3 +74,7 @@ function render (state) {
   }
 }
 
+```
+
+Server code in index.js is only used to serve the document.
+Signalhub is a light amount of server code used to do the webrtc handshaking.  It scales horizontally, so you can add an array of multiple signalhubs to your app!

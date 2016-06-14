@@ -45,6 +45,11 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "concat-stream": "^1.5.1"
+    "concat-stream": "^1.5.1",
+    "hyperlog": "^4.10.0",
+    "level-browserify": "^1.1.0",
+    "signalhub": "^4.5.1",
+    "webrtc-swarm": "^2.4.0",
+    "yo-yo": "^1.2.1"
   }
 }
