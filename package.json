@@ -1,0 +1,50 @@
+{
+  "name": "playground-webrtc-append-only-media",
+  "version": "1.0.0",
+  "description": "A twitter like stream of media over webrtc",
+  "main": "index.js",
+  "browser": {
+    "level": "level-browserify"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "lint": "standard browser/*.js",
+    "start": "node index.js",
+    "watch": "watchify browser/index.js -o browser/dist/bundle.js -dv",
+    "dev": "npm run watch & npm start",
+    "build": "browserify browser/index.js | uglifyjs -cm > browser/dist/bundle.js",
+    "production": "npm run build & npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jekrb/playground-webrtc-append-only-media.git"
+  },
+  "author": "Jekrb <Jacob.JW.Burden@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jekrb/playground-webrtc-append-only-media/issues"
+  },
+  "homepage": "https://github.com/jekrb/playground-webrtc-append-only-media#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "standard": "^7.1.2",
+    "uglify-js": "^2.6.2",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "concat-stream": "^1.5.1"
+  }
+}
